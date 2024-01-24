@@ -26,7 +26,7 @@ public class CityService implements ICityService{
     @CircuitBreaker(name = "hotels-service", fallbackMethod = "fallbackGetCitiesHotel")
     @Retry(name = "hotels-service")
     public CityDTO getCitiesHotels(String name, String country) {
-        
+
         //buscamos ciudad original
         City city = this.findCity(name, country);
 
